@@ -78,9 +78,9 @@
         const datos = {
             "21146222": {
                 nombre: "Royser Eduardo De Souza Olortegui",
-                licencia: "MRC-21146222",
                 estado: "Activo",
-                clase: "B",
+                licencia: "MCR-21146222",
+		clase: "B",
                 categoria: "IIC",
                 expedicion: "10/01/2024",
                 revalidacion: "10/01/2029",
@@ -91,15 +91,28 @@
             },
             "44745647": {
                 nombre: "Neil Olórtegui Bardales",
-                licencia: "MRC-44745647",
                 estado: "Activo",
-                clase: "B",
+                licencia: "MCR-44745647",
+		clase: "B",
                 categoria: "IIC",
                 expedicion: "10/01/2024",
                 revalidacion: "10/01/2029",
                 expediente: "MPA-70891",
                 grupo: "O+",
                 domicilio: "Jr. Oscar B. Vasquez Mz 6 Lt 3 Ucayali/Coronel Portillo/Campoverde",
+                restricciones: "Sin Restricciones"
+            },
+            "45398407": {
+                nombre: "Adriana Pinchi Gonzales",
+                estado: "Activo",
+                licencia: "MCR-45398407",
+		clase: "B",
+                categoria: "IIC",
+                expedicion: "10/01/2024",
+                revalidacion: "10/01/2029",
+                expediente: "MPA-70891",
+                grupo: "O+",
+                domicilio: "Caserio Santa Rosa Ucayali/Coronel Portillo/Yarinacocha",
                 restricciones: "Sin Restricciones"
             }
         };
@@ -114,9 +127,9 @@
                 resultado.innerHTML = `
                     <h3>Resultado de la consulta</h3>
                     <p><strong>Nombre:</strong> ${d.nombre}</p>
-                    <p><strong>Nro Licencia:</strong> ${d.licencia}</p>
                     <p><strong>Estado:</strong> ${d.estado}</p>
-                    <p><strong>Clase:</strong> ${d.clase}</p>
+                    <p><strong>Nro Licencia:</strong> ${d.licencia}</p>
+		    <p><strong>Clase:</strong> ${d.clase}</p>
                     <p><strong>Categoría:</strong> ${d.categoria}</p>
                     <p><strong>Fecha de expedición:</strong> ${d.expedicion}</p>
                     <p><strong>Fecha de revalidación:</strong> ${d.revalidacion}</p>
@@ -134,3 +147,4 @@
     </script>
 </body>
 </html>
+
