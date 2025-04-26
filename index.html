@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipalidad Provincial de Antabamba - Licencias de Conducir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        header img {
+            height: 130px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        form input[type="text"] {
+            padding: 0.5rem;
+            width: 250px;
+        }
+        form input[type="submit"] {
+            padding: 0.5rem 1rem;
+            background-color: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e0f7fa;
+            display: none;
+        }
+        footer {
+            background-color: #00264d;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="antabamba_muni.png" alt="Logo Municipalidad">
+        <h1>Municipalidad Provincial de Antabamba - Licencias de Conducir</h1>
+    </header>
+    <main>
+        <p>Consulta tu licencia. Legalidad y vigencia. Solo ingresa el número de tu documento en el formulario.</p>
+        <form id="consultaForm">
+            <input type="text" id="documento" placeholder="Número de documento">
+            <input type="submit" value="Consultar">
+        </form>
+        <div id="resultado" class="result"></div>
+    </main>
+    <footer>
+        <p><strong>Municipalidad Provincial de Antabamba - Gerencia de Transportes</strong></p>
+        <p>Verifica de manera rápida y confiable la validez de la licencia de tu motocicleta. Podrás comprobar si tu documento cumple con la normativa vigente y confirmar su estado de vigencia actual.</p>
+        <p><strong>Horario de Atención</strong><br>
+        Lunes a Viernes:<br>
+        Mañana: 8:00 a.m. - 12:45 p.m.<br>
+        Tarde: 1:45 p.m. - 8:00 p.m.</p>
+        <p><strong>Municipalidad Provincial de Antabamba:</strong> Sede Central: PLAZA DE ARMAS S/N - Antabamba - Antabamba - Apurímac - Perú</p>
+    </footer>
+    <script>
+        const datos = {
+            "21146222": {
+                nombre: "Royser Eduardo De Souza Olortegui",
+                estado: "Activo",
+                clase: "B",
+                categoria: "IIC",
+                expedicion: "10/01/2024",
+                revalidacion: "10/01/2029",
+                expediente: "MPA-70891",
+                grupo: "O+",
+                domicilio: "Jr. Tupac Amaru 233 Mz A Lt 15 Ucayali/Coronel Portillo/Yarinacocha",
+                restricciones: "Sin Restricciones"
+            },
+            "44745647": {
+                nombre: "Neil Olórtegui Bardales",
+                estado: "Activo",
+                clase: "B",
+                categoria: "IIC",
+                expedicion: "10/01/2024",
+                revalidacion: "10/01/2029",
+                expediente: "MPA-70891",
+                grupo: "O+",
+                domicilio: "Jr. Oscar B. Vasquez Mz 6 Lt 3 Ucayali/Coronel Portillo/Campoverde",
+                restricciones: "Sin Restricciones"
+            }
+        };
+
+        document.getElementById("consultaForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const doc = document.getElementById("documento").value;
+            const resultado = document.getElementById("resultado");
+
+            if (datos[doc]) {
+                const d = datos[doc];
+                resultado.innerHTML = `
+                    <h3>Resultado de la consulta</h3>
+                    <p><strong>Nombre:</strong> ${d.nombre}</p>
+                    <p><strong>Estado:</strong> ${d.estado}</p>
+                    <p><strong>Clase:</strong> ${d.clase}</p>
+                    <p><strong>Categoría:</strong> ${d.categoria}</p>
+                    <p><strong>Fecha de expedición:</strong> ${d.expedicion}</p>
+                    <p><strong>Fecha de revalidación:</strong> ${d.revalidacion}</p>
+                    <p><strong>Expediente:</strong> ${d.expediente}</p>
+                    <p><strong>Grupo Sanguíneo:</strong> ${d.grupo}</p>
+                    <p><strong>Domicilio:</strong> ${d.domicilio}</p>
+                    <p><strong>Restricciones:</strong> ${d.restricciones}</p>
+                `;
+                resultado.style.display = "block";
+            } else {
+                resultado.innerHTML = `<p>No se encontró información para el número de documento ingresado.</p>`;
+                resultado.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
